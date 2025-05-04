@@ -19,7 +19,7 @@ fetch("res/maps/test.json")
 mapData.usedTiles.forEach(function(usedTile){
     const promise = new Promise(function(resolve){
       const img = new Image();
-      img.src="res/tiles/"+usedTile+".png";
+      img.src="res/img/tiles/"+usedTile+".png";
       img.onload = function(){
         tileImages[usedTile] = img;
         resolve ()
