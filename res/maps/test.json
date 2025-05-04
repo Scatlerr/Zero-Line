@@ -1,1 +1,12 @@
-
+{
+  "width": 5,
+  "height": 5,
+  "usedTiles": ["water", "ocean", "grass", "sand"],
+  "tiles": [
+    ["water", "water", "sand", "grass", "grass"],
+    ["ocean", "water", "sand", "grass", "grass"],
+    ["ocean", "ocean", "sand", "sand", "grass"],
+    ["ocean", "ocean", "water", "sand", "sand"],
+    ["ocean", "water", "water", "sand", "grass"]
+  ]
+}
