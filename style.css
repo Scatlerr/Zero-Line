@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #222;
 }
 
 img {
@@ -14,5 +15,5 @@ img {
 
 canvas {
   display: block;
-  background: #333;
+  background-color: #333;
 }
