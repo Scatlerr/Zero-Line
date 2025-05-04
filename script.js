@@ -9,7 +9,7 @@ function resizeCanvas() {
 }
 
 resizeCanvas();
-window.addEventListener('resize', resizeCanvas); // update on window resize
+
 
 fetch("res/maps/test.json")
   .then (response => response.json())
