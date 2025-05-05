@@ -49,4 +49,4 @@ function drawMap() {
   }
 }
 
-document.getElementById("a").getContext= "${(4*1/2)}"
+document.getElementById("a").setContext= "${(4*1/2)}"
