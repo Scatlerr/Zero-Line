@@ -48,3 +48,5 @@ function drawMap() {
     }
   }
 }
+
+window.alert(4*1/2)
