@@ -10,7 +10,7 @@ body {
 }
 
 canvas {
-    display: block;
+    display: none;
     background-color: #333;
     image-rendering: pixelated;
 }
