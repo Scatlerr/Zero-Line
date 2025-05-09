@@ -1,4 +1,4 @@
-class battlefield {
+class Battlefield {
   constructor (config) {
     this.element = config.element;
     this.canvas = this.element.querySelector(".battlefield");
