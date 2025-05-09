@@ -41,3 +41,5 @@ class Battlefield {
     })
   }
 }
+
+export default Battlefield;
