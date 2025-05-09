@@ -1,7 +1,7 @@
 const battlefield = new Battlefield({
     element: document,
-    screenHeight: window.screenHeight,
-    screenWidth: window.screenWidth,
+    screenHeight: window.innerHeight,
+    screenWidth: window.innerWidth,
     tileHeight: 32,
     tileWidth: 64,
     map: "test",
