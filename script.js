@@ -30,7 +30,7 @@ class Battlefield {
               for (let x=0; x<mapData.width; x++) {
                 const isoX = ((x-y-1)*self.tileWidth + self.screenWidth)/2;
                 const isoY = ((x+y)*self.tileHeight)/2;
-                const tile = mapData.tiles[x][y];
+                const tile = mapData.tiles[y][x];
                 self.ctx.drawImage(tileImages[tile],isoX,isoY)
               }
             }
