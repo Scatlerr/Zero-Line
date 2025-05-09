@@ -10,16 +10,16 @@ class Battlefield {
     this.map = config.map
   }
   
-  async mapLoad(this.map) {
+  async mapLoad() {
     const self = this
-    const response = await fetch (`maps/${map}.json`);
+    const response = await fetch (`maps/${this.map}.json`);
     const mapData = await response.json();
     return new Promise(function(resolve){
       let loadedTiles = 0
       let tileImages = {}
       mapData.usedTiles.forEach(function(usedTile){
         const img = new Image;
-        img.src = `res.img.tiles.${usedTile}.png`;
+        img.src = `res/img/tiles/${usedTile}.png`;
         img.onload = function () {
           loadedTiles++
           tileImages[usedTile] = img
