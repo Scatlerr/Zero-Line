@@ -7,6 +7,6 @@ document.querySelector("#campaignBtn").onclick = function{
         tileWidth: 64,
         map: "test",
     })
-    document.querySelector(".mainMenu").style.display = "none"
+    document.querySelector("#mainMenu").style.display = "none"
     battlefield.mapLoad()
 }
