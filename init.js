@@ -1,5 +1,3 @@
-import BF from "./script.js"
-
 const battlefield = new BF({
     element: document,
     screenHeight: window.innerHeight,
