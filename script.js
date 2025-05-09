@@ -13,7 +13,7 @@ class Battlefield {
   async mapLoad() {
     console.log(this);
     const self = this
-    const response = await fetch (`maps/${this.map}.json`);
+    const response = await fetch (`res/maps/${this.map}.json`);
     const mapData = await response.json();
     return new Promise(function(resolve){
       let loadedTiles = 0
