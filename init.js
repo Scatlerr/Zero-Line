@@ -4,7 +4,7 @@ const battlefield = new Battlefield({
     screenWidth: window.screenWidth,
     tileHeight: 32,
     tileWidth: 64,
-    map: test,
+    map: "test",
 })
 
 battlefield.mapLoad()
