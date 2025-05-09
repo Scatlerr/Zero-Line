@@ -18,7 +18,7 @@ class battlefield {
       let tileImages = {}
       mapData.usedTiles.forEach(function(usedTile){
         const img = new Image;
-        img.src = `res.tiles.${usedTile}.png`;
+        img.src = `res.img.tiles.${usedTile}.png`;
         img.onload = function () {
           loadedTiles++
           tileImages[usedTile] = img
