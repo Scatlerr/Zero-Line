@@ -37,7 +37,7 @@ class Battlefield {
               }
             }
             resolve(mapData);
-            this.canvas.style.display = "block"
+            self.canvas.style.display = "block"
           }
         }
       })
