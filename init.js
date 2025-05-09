@@ -1,4 +1,4 @@
-const battlefield = new BF({
+const battlefield = new Battlefield({
     element: document,
     screenHeight: window.innerHeight,
     screenWidth: window.innerWidth,
