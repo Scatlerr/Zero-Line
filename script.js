@@ -37,7 +37,7 @@ class Battlefield {
             resolve(mapData)
           }
         }
-      }
+      })
     })
   }
 }
