@@ -1,4 +1,6 @@
-const battlefield = new Battlefield({
+import BF from "./script.js"
+
+const battlefield = new BF({
     element: document,
     screenHeight: window.innerHeight,
     screenWidth: window.innerWidth,
