@@ -11,6 +11,7 @@ class Battlefield {
   }
   
   async mapLoad() {
+    console.log(this);
     const self = this
     const response = await fetch (`maps/${this.map}.json`);
     const mapData = await response.json();
