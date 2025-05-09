@@ -6,3 +6,5 @@ const battlefield = new Battlefield({
     tileWidth: 64,
     map: test,
 })
+
+battlefield.mapLoad()
