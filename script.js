@@ -7,9 +7,10 @@ class Battlefield {
     this.screenWidth = config.screenWidth;
     this.tileHeight = config.tileHeight;
     this.tileWidth = config.tileWidth;
+    this.map = config.map
   }
   
-  async mapLoad(map) {
+  async mapLoad(this.map) {
     const self = this
     const response = await fetch (`maps/${map}.json`);
     const mapData = await response.json();
