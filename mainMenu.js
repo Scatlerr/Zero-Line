@@ -1,4 +1,4 @@
-document.querySelector("#campaignBtn").onclick = function(){
+document.querySelector("#campBtn").onclick = function(){
     const battlefield = new Terrain({
         element: document,
         screenHeight: window.innerHeight,
