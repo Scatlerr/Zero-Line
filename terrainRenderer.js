@@ -9,9 +9,9 @@ class Terrain {
     this.canvas.height = (this.map.width+this.map.height)*this.tileHeight;
   }
   
-  async drawTerrain() {
-    this.map.tiles.forEach(function(usedTileRow, y){
-      usedTileRow.forEach(function(usedTile, x){
+  drawTerrain() {
+    this.map.tiles.forEach(usedTileRow, y =>{
+      usedTileRow.forEach(usedTile, x =>{
         const isoX = ((x-y-1)*this.tileWidth + this.canvas.width)/2;
         const isoY = ((x+y)*this.tileHeight)/2;
         const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[usedTile].texture)
