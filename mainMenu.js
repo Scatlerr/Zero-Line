@@ -1,5 +1,5 @@
 document.querySelector("#campaignBtn").onclick = function(){
-    const battlefield = new Battlefield({
+    const battlefield = new Terrain({
         element: document,
         screenHeight: window.innerHeight,
         screenWidth: window.innerWidth,
