@@ -1,12 +1,9 @@
-document.querySelector("#campBtn").onclick = function(){
-    const battlefield = new Terrain({
-        element: document,
-        screenHeight: window.innerHeight,
-        screenWidth: window.innerWidth,
-        tileHeight: 32,
-        tileWidth: 64,
-        map: "test",
-    })
-    document.querySelector("#mainMenu").style.display = "none"
-    battlefield.mapLoad()
+document.querySelector("#campBtn").onclick = () =>{
+    document.querySelectorAll(".mainMenu").style.display = "none";
+    document.querySelectorAll(".campMenu").style.display = "flex";
+}
+
+document.querySelector("#campBackBtn").onclick = () =>{
+    document.querySelectorAll(".campMemu").style.display = "none";
+    document.querySelectorAll(".mainMenu").style.display = "flex"
 }
