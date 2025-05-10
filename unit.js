@@ -2,13 +2,13 @@ function unitReady (config){
     const img = new Image();
     img.src = `res/img/units/${config.ID}.png`;
     img.onload = function(){
-        canvas = document.createElement("canvas")
-        ctx = canvas.getContext("2d")
-        ctx.drawImage(img);
+        const canvas = document.createElement("canvas")
+        const ctx = canvas.getContext("2d")
+        const ctx.drawImage(img);
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
         const data = imageData.data
         //Change magenta to team color
-        for (i=0; i<data.lenght; i+=4){
+        for (i=0; i<data.length; i+=4){
             let r = data[i];
             let g = data[i+1];
             let b = data[i+2];
