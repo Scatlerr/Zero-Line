@@ -9,4 +9,7 @@
     ["ocean", "ocean", "water", "sand", "sand"],
     ["ocean", "water", "water", "sand", "grass"]
   ]
+  "units": {
+    "3,3": "SMCV",
+  }
 }
