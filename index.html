@@ -12,12 +12,23 @@
         <div id="mainMenu">
             <img src="res/img/gameLogo.png">
             <img src="res/img/mainMenuBG.png">
-            <button id="campaignBtn">Campaign</button>
+            <button id="campBtn">Campaign</button>
             <button id="skirmishBtn">Skirmish</button>
             <button id="loadBtn">Load Game</button>
             <button id="editorBtn">Map Editor</button>
             <button id="achieveBtn">Achievements</button>
             <button id="optBtn">Options</button>
+            <div id="missionList" style="display:none">
+              <button id="startCampBtn">StartGame</button>
+              <button id="backCampBtn">Back</button>
+              <div id="diff">
+                <button id="casualDiffBtn">Casual</button>
+                <button id="normalDiffBtn">Normal</button>
+                <button id="brutalDiffBtn">Brutal</button>
+                <div id="diffSlider"><div>
+                <div id="diffSliderBar></div>
+              </div>
+            </div>
         </div>
         <canvas class="battlefield" id="battlefield"></canvas>
     </div>
