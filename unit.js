@@ -42,7 +42,7 @@ class unit {
         this.moveToY = config.moveToY;
         this.imageData = config.imageData;
         this.canvas = document.querySelector("#battlefield");
-        this.ctx = canvas.ctx("2d");
+        this.ctx = canvas.getContext("2d");
     }
     
     drawUnit (){
