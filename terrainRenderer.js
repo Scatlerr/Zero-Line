@@ -1,6 +1,6 @@
 class Terrain {
   constructor (config) {
-    this.canvas = document.element.querySelector(".battlefield");
+    this.canvas = document.querySelector(".battlefield");
     this.ctx = this.canvas.getContext("2d");
     this.tileHeight = config.tileHeight;
     this.tileWidth = config.tileWidth;
