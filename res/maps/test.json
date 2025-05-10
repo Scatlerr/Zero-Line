@@ -21,7 +21,7 @@
     "HP": 3000,
     "Armor": "Heavy",
     "Tier": 3,
-    "Prerequisitie": "SSDP + SLAB + WARF",
+    "Prerequisite": "SSDP + SLAB + WARF",
     "Speed": 0.5,
     "Deploy": "SCYD",
     "Deploy_icon": "",
