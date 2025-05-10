@@ -1,32 +1,32 @@
 function unitReady (config){
-    const img = New Image();
-    img.src = "res/img/units/${config.ID}.png";
-    img.onload(function(){
+    const img = new Image();
+    img.src = `res/img/units/${config.ID}.png`;
+    img.onload = function(){
         canvas = document.createElement("canvas")
-        ctx = canvas.ctx;
+        ctx = canvas.getContext("2d")
         ctx.drawImage(img);
-        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-        data = imageData.data
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+        const data = imageData.data
         //Change magenta to team color
         for (i=0; i<data.lenght; i+=4){
-            const r = data[i];
-            const g = data[i+1];
-            const b = data[i+2];
+            let r = data[i];
+            let g = data[i+1];
+            let b = data[i+2];
             if (r===255 && b===255){
                 r = config.owner.teamColor[2];
                 g = config.owner.teamColor[3];
                 b = config.owner.teamColor[4];
             }
         }
-        const unit = New unit({
-            ID = config.ID,
-            owner = config.owner,
-            minded = null
-            this.x = owner.primaryBarracks.exitPointx
-            this.y = owner.primaryBarracks.exitPoint.y
-            imageData = imageData
+        const unit = new unit({
+            ID: config.ID,
+            owner: config.owner,
+            minded: null
+            x: owner.primaryBarracks.exitPoint.x
+            y: owner.primaryBarracks.exitPoint.y
+            imageData: imageData
         })
-    })
+    }
 }
 
 class unit {
@@ -41,7 +41,7 @@ class unit {
         this.moveToX = config.moveToX;
         this.moveToY = config.moveToY;
         this.imageData = config.imageData;
-        this.canvas = document.querySelector(#battlefield);
+        this.canvas = document.querySelector("#battlefield");
         this.ctx = canvas.ctx("2d");
     }
     
