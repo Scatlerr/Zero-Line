@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    touch-action: manipulation
 }
 
 body {
@@ -7,6 +8,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #222;
+    
 }
 
 canvas {
