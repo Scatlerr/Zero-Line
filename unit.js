@@ -12,7 +12,7 @@ function unitReady (config){
             let r = data[i];
             let g = data[i+1];
             let b = data[i+2];
-            if (r===255 && b===255){
+            if (r===255 && g===0 && b===255){
                 r = config.owner.teamColor[2];
                 g = config.owner.teamColor[3];
                 b = config.owner.teamColor[4];
@@ -36,7 +36,7 @@ class unit {
         this.minded = config.minded || null;
         this.x = config.x;
         this.y = config.y;
-        this.maxHP = confix.maxHP;
+        this.maxHP = config.maxHP;
         this.HP = config.HP;
         this.moveToX = config.moveToX;
         this.moveToY = config.moveToY;
@@ -48,6 +48,6 @@ class unit {
     drawUnit (){
         const isoX = ((x-y-1) + screenWidth)/2;
         const isoY = (x+y)/2;
-        ctx.drawImage(image, isoX, isoY);
+        ctx.putImageData(imageData, isoX, isoY);
     }
 }
