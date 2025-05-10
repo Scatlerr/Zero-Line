@@ -22,12 +22,23 @@ canvas {
 }
 
 #mainMenu button {
-    display: block;
-    color: white;
+    display: flex;
+    color: #EEEEEE;
     background-color: #444c5c;
     margin-left: auto;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#mainMenu button:hover {
+    background-color: #FFFFFF;
+    color: #EFEFEF;
 }
 
 #mainMenu {
     background-color: #0a0f2c;
+    width: 100vw;
+    height: 100vh;
 }
