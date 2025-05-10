@@ -10,6 +10,18 @@
     ["ocean", "water", "water", "sand", "grass"]
   ]
   "units": {
-    "3,3": "SMCV",
+    "3,3": "SMCV"
+  }
+  "SMCV": {
+    "HP": 3000,
+    "Armor": "Heavy",
+    "Tier": 3,
+    "Prerequisitie": "SSDP + SLAB + WARF",
+    "Speed": 1/3,
+    "Deploy": "SCYD",
+    "Deploy_icon": "",
+    "Image": "SMCV",
+    "Animation": "",
+    "Weapon": "NONE"
   }
 }
