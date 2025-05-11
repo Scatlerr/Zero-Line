@@ -4,16 +4,16 @@
     "width": 10,
     "height": 10,
     "tiles": [
-      [0, 1, 0, 0, 2, 0, 1, 1, 0, 0],
-      [1, 1, 2, 0, 0, 0, 2, 1, 1, 0],
-      [0, 2, 2, 2, 0, 0, 0, 0, 1, 1],
-      [0, 1, 1, 1, 0, 0, 0, 2, 2, 2],
-      [0, 0, 1, 1, 1, 0, 0, 0, 2, 1],
-      [2, 0, 0, 1, 1, 1, 0, 0, 0, 1],
-      [2, 2, 0, 0, 1, 1, 1, 0, 0, 1],
-      [1, 2, 2, 0, 0, 1, 1, 1, 0, 0],
-      [1, 1, 2, 2, 0, 0, 1, 1, 1, 0],
-      [0, 1, 1, 2, 2, 0, 0, 1, 1, 1]
+      ["grass", "sand", "grass", "grass", "water", "grass", "sand", "sand", "grass", "grass"],
+      ["sand", "sand", "water", "grass", "grass", "grass", "water", "sand", "sand", "grass"],
+      ["grass", "water", "water", "water", "grass", "grass", "grass", "grass", "sand", "sand"],
+      ["grass", "sand", "sand", "sand", "grass", "grass", "grass", "water", "water", "water"],
+      ["grass", "grass", "sand", "sand", "sand", "grass", "grass", "grass", "water", "sand"],
+      ["water", "grass", "grass", "sand", "sand", "sand", "grass", "grass", "grass", "sand"],
+      ["water", "water", "grass", "grass", "sand", "sand", "sand", "grass", "grass", "sand"],
+      ["sand", "water", "water", "grass", "grass", "sand", "sand", "sand", "grass", "grass"],
+      ["sand", "sand", "water", "water", "grass", "grass", "sand", "sand", "sand", "grass"],
+      ["grass", "sand", "sand", "water", "water", "grass", "grass", "sand", "sand", "sand"]
     ],
     "units": {
       "3,3": "ZMCV"
@@ -24,35 +24,37 @@
     "usedTiles": {
       "grass": {
         "sprite": "grass",
-        "attributes": "drillable"
+        "attributes": ["drillable"]
       },
       "sand": {
         "sprite": "sand",
-        "attributes": "drillable"
+        "attributes": ["drillable"]
       },
       "water": {
         "sprite": "water",
-        "attributes": "water"
+        "attributes": ["water"]
       },
       "ocean": {
         "sprite": "ocean",
-        "attributes": "water"
+        "attributes": ["water"]
       }
     },
     "units": {
       "ZMCV": {
-        "HP": 3000,
+        "hp": 3000,
         "typeID": "ZMCV",
-        "Armor": "Heavy",
-        "Tier": 3,
-        "Prerequisite": "ZSDP + ZLAB + WARF",
-        "Speed": 0.5,
-        "Deploy": "ZCYD",
-        "Deploy_icon": "",
-        "Image": "ZMCV",
-        "Animation": "",
-        "Weapon": "NONE"
-        "isAC": false
+        "armor": "Heavy",
+        "tier": 3,
+        "prerequisite": "ZSDP + ZLAB + WARF",
+        "speed": 0.5,
+        "sprite": "ZMCV",
+        "iconSprite": "ZMCV",
+        "weapon": "none",
+        "attributes": ["willPower","driverSafe","uncrushable2"],
+        "deploy": {
+          "deployIcon": "ZMCV",
+          "deployAction": "transform=ZCY"
+        }
       }
     }
   }
