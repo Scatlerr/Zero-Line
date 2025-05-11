@@ -13,10 +13,10 @@ function loader (map){
         const resTerrain = {}
         const resUnits = {}
         
-        for (let tile in mapData.map.resources.tiles){
+        for (let tile in mapData.resources.tiles){
             loader.add("Terrain/"+tile.typeID, `./res/img/tiles/${tile.sprite}.png`)
         }
-        for (let unit in mapData.map.resources.units){
+        for (let unit in mapData.resources.units){
             loader.add("Units/"+unit.typeID, `./res/img/units/${unit.sprite}.png`)
         }
         loader.load((loader,resources) => {
