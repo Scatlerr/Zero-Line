@@ -8,7 +8,7 @@ function loader (map){
     .then(response => response.json())
     .then(data => {
         const mapData = data;
-        app.renderer.resize(mapData.map.width+mapData.map.height)*32,(mapData.map.height+mapData.map.width)*16)
+        app.renderer.resize((mapData.map.width+mapData.map.height)*32,(mapData.map.height+mapData.map.width)*16)
         const loader = PIXI.Loader.shared
         const resTerrain = {}
         const resUnits = {}
