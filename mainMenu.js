@@ -6,7 +6,7 @@ document.querySelector("#campBtn").onclick = () =>{
     campMenu.style.display = "flex";
 }
 
-document.querySelector("#campBackBtn").onclick = () =>{
+document.querySelector("#backCampBtn").onclick = () =>{
     campMenu.style.display = "none";
     mainMenu.style.display = "flex"
 }
