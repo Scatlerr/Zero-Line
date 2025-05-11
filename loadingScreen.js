@@ -21,7 +21,7 @@ fetch(`./res/maps/${map}.json`)
             tileWidth: 64,
             mapData: mapData
         })
-        terrain.drawTerrain()
+        terrainRenderer(mapData)
     }
 
 })
