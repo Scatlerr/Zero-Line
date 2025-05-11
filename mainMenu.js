@@ -1,5 +1,5 @@
 const mainMenu = document.querySelectorAll("#mainMenu)
-cosnt campMenu = document.querySelectorAll("#mainMenu)
+const campMenu = document.querySelectorAll("#mainMenu)
 
 document.querySelector("#campBtn").onclick = () =>{
     mainMenu.style.display = "none";
