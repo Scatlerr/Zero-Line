@@ -1,6 +1,7 @@
 logToScreen("WE ARE NOT DOOMED(MAYBE)")
 
 function terrainRenderer(mapData, resTerrain) {
+  logToScreen(JSON.stringify(mapData))
   const terrainLayer = new PIXI.Container()
   app.stage.appendChild(terrainLayer);
 
