@@ -9,7 +9,7 @@ document.querySelector("#campBtn").onclick = () =>{
     mainMenu.style.display = "none";
     campMenu.style.display = "flex";
 }
-logToConsole("Hello world")
+logToConsole("Hello world");
 document.querySelector("#backCampBtn").onclick = () =>{
     campMenu.style.display = "none";
     mainMenu.style.display = "flex"
