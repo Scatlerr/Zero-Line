@@ -23,7 +23,7 @@ function terrainRenderer(map) {
 function unitRenderer(unit) {
   unit.sprite.x = ((unit.x-unit.y-1)*64 + app.width)/2;
   unit.sprite.y = ((unit.x+unit.y)*32)/2
-  groundLayer.addChild(sprite)
+  groundLayer.addChild(unit.sprite)
 }
 
 class Unit {
