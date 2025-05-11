@@ -12,7 +12,7 @@ function loader (map){
         document.body.appendChild(app.view)
         const loader = PIXI.Loader.shared
         mapData.usedTiles.forEach(usedTile =>{
-            loader.add(usedTile, `./res/img/tiles/${usedTile}.png`)
+            loader.add(`Terrain/${usedTile}`, `./res/img/tiles/${usedTile}.png`)
         })
         mapData.units.forEach(usedUnit =>{
             loader.add(`Units/${usedUnit}`, `./res/img/tiles/${usedUnit}.png`)
