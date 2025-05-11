@@ -1,3 +1,5 @@
+logToScreen("it begins")
+
 document.addEventListener('gesturestart', e => e.preventDefault());
 document.addEventListener('gesturechange', e => e.preventDefault());
 document.addEventListener('gestureend', e => e.preventDefault());
@@ -19,3 +21,5 @@ document.querySelector("#startCampBtn").onclick = () => {
     campMenu.style.display = "none"
     loader("test")
 }
+
+logToScreen("nevermind")
