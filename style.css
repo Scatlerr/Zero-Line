@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    touch-action: manipulation
+    touch-action: manipulation;
 }
 
 body {
@@ -9,12 +9,6 @@ body {
     overflow: hidden;
     background-color: #222;
     
-}
-
-canvas {
-    display: none;
-    background-color: #333;
-    image-rendering: pixelated;
 }
 
 .gameContainer {
