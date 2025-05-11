@@ -1,9 +1,16 @@
+const mainMenu = document.querySelectorAll("#mainMenu)
+cosnt campMenu = document.querySelectorAll("#mainMenu)
+
 document.querySelector("#campBtn").onclick = () =>{
-    document.querySelectorAll(".mainMenu").style.display = "none";
-    document.querySelectorAll(".campMenu").style.display = "flex";
+    mainMenu.style.display = "none";
+    campMenu.style.display = "flex";
 }
 
 document.querySelector("#campBackBtn").onclick = () =>{
-    document.querySelectorAll(".campMemu").style.display = "none";
-    document.querySelectorAll(".mainMenu").style.display = "flex"
+    campMenu.style.display = "none";
+    mainMenu.style.display = "flex"
+}
+
+document.querySelector("#startCampBtn").onclick = () => {
+    mainMenu.style.display = "none"
 }
