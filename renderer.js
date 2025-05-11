@@ -1,25 +1,24 @@
-function terrainRenderer(mapData) {
+function terrainRenderer(mapData, resTerrain) {
   const terrainLayer = new PIXI.Container()
   app.stage.appendChild(terrainLayer);
 
   mapData.map.tiles.forEach((usedTileRow, y) =>{
     usedTileRow.forEach((usedTile, x) =>{
-      const isoX = ((x-y-1)*64 + app.width)/2;
-      const isoY = ((x+y)*32)/2;
-      const sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[`Terrain/${usedTile}`].texture);
-      sprite.x = isoX;
-      sprite.y = isoY;
+      const sprite = resTerrain.usedTile;
+      sprite.x = ((x-y-1)*64 + app.width)/2;
+      sprite.y = ((x+y)*32)/2;
       terrainLayer.addChild(sprite);
     })
   })
   terrainLayer.cacheAsBitmap = true;
 }
 
-const groundLayer = new PIXI.Container()
+const unitLayer = new PIXI.Container()
+app.stage.appendChild(unitLayer)
 function unitRenderer(unit) {
   unit.sprite.x = ((unit.x-unit.y-1)*64 + app.width)/2;
   unit.sprite.y = ((unit.x+unit.y)*32)/2
-  groundLayer.addChild(unit.sprite)
+  unitLayer.addChild(unit.sprite)
 }
 
 class Unit {
