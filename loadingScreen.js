@@ -1,15 +1,17 @@
 //document.querySelector("loadingScreen").style.display="block"
 
+app = new PIXI.Application({
+    width: mapData.map.width,
+    height: mapData.map.height
+})
+document.body.appendChild(app.view)
+
 function loader (map){
     fetch(`./res/maps/${map}.json`)
     .then(response => response.json())
     .then(data => {
         const mapData = data;
-        app = new PIXI.Application({
-            width: mapData.map.width,
-            height: mapData.map.height
-        })
-        document.body.appendChild(app.view)
+        
         const loader = PIXI.Loader.shared
         
         mapData.map.usedTiles.forEach(usedTile =>{
