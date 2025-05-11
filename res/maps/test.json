@@ -22,6 +22,7 @@
   "units": {
     "ZMCV": {
       "HP": 3000,
+      "typeID": "ZMCV",
       "Armor": "Heavy",
       "Tier": 3,
       "Prerequisite": "ZSDP + ZLAB + WARF",
