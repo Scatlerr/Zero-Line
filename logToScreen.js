@@ -6,7 +6,7 @@ function logToScreen(msg) {
     logBox = document.createElement("div");
     logBox.id = "debugLog";
     logBox.style.position = "absolute";
-    logBox.style.top = "0";
+    logBox.style.bottom = "60px";
     logBox.style.left = "0";
     logBox.style.maxHeight = "200px";
     logBox.style.overflowY = "auto";
