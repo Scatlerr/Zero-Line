@@ -1,5 +1,6 @@
 {
   "map": {
+    "name": "Test Map",
     "width": 10,
     "height": 10,
     "tiles": [
@@ -18,20 +19,41 @@
       "3,3": "ZMCV"
     }
   },
-  "usedTiles": [0, 1, 2],
-  "groundUnits": {
-    "ZMCV": {
-      "HP": 3000,
-      "typeID": "ZMCV",
-      "Armor": "Heavy",
-      "Tier": 3,
-      "Prerequisite": "ZSDP + ZLAB + WARF",
-      "Speed": 0.5,
-      "Deploy": "ZCYD",
-      "Deploy_icon": "",
-      "Image": "ZMCV",
-      "Animation": "",
-      "Weapon": "NONE"
+  
+  "resources": {
+    "usedTiles": {
+      "grass": {
+        "sprite": "grass",
+        "attributes": "drillable"
+      },
+      "sand": {
+        "sprite": "sand",
+        "attributes": "drillable"
+      },
+      "water": {
+        "sprite": "water",
+        "attributes": "water"
+      },
+      "ocean": {
+        "sprite": "ocean",
+        "attributes": "water"
+      }
+    },
+    "units": {
+      "ZMCV": {
+        "HP": 3000,
+        "typeID": "ZMCV",
+        "Armor": "Heavy",
+        "Tier": 3,
+        "Prerequisite": "ZSDP + ZLAB + WARF",
+        "Speed": 0.5,
+        "Deploy": "ZCYD",
+        "Deploy_icon": "",
+        "Image": "ZMCV",
+        "Animation": "",
+        "Weapon": "NONE"
+        "isAC": false
+      }
     }
   }
 }
