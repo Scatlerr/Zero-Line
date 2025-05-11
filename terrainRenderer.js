@@ -28,7 +28,8 @@ function unitRenderer(unit) {
 
 class Unit {
   constructor(config){
-    this.ID = config.ID;
+    this.typeID = config.typeID;
+    this.ID = config.ID
     this.owner = config.owner || "civilianSide";
     this.minded = config.minded || null;
     this.x = config.x || document.querySelector("#battlefield").width/2;
@@ -37,7 +38,7 @@ class Unit {
     this.HP = config.HP || this.maxHP;
     this.moveToX = config.moveToX || null;
     this.moveToY = config.moveToY || null;
-    this.isGround = config.isGround || yes;
+    this.isGround = config.isGround || true;
     this.sprite = PIXI.sprite(PIXI.loader.shared[(this.isGround)?"Ground":"Air"][typeID]);
   }
   addToRenderer (){
