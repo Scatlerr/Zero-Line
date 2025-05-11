@@ -21,7 +21,7 @@
   },
   
   "resources": {
-    "usedTiles": {
+    "tiles": {
       "grass": {
         "sprite": "grass",
         "attributes": ["drillable"]
