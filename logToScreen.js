@@ -22,3 +22,7 @@ function logToConsole(msg) {
 
 const logToScreen = logToConsole
 const consoleToLog = logToConsole
+
+window.onerror = function(message, source, lineno, colno, error) {
+  logToScreen(`Global Error: ${message} at ${source}:${lineno}:${colno}`);
+};
