@@ -15,8 +15,8 @@ function loader (map){
         mapData.map.usedTiles.forEach(usedTile =>{
             loader.add(`Terrain/${usedTile}`, `./res/img/tiles/${usedTile}.png`)
         })
-        mapData.map.units.forEach(usedUnit =>{
-            loader.add(`Units/${usedUnit.typeID}`, `./res/img/units/${usedUnit.Image}.png`)
+        mapData.map.groundUnits.forEach(usedUnit =>{
+            loader.add(`Ground/${usedUnit.typeID}`, `./res/img/units/${usedUnit.Image}.png`)
         })
         loader.load((loader,resources) => {
             terrainRenderer(mapData)
