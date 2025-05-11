@@ -19,3 +19,5 @@ function logToScreen(msg) {
   }
   logBox.innerHTML += msg + "<br>";
 }
+
+logToScreen("it's working")
