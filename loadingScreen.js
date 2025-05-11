@@ -11,6 +11,7 @@ function loader (map){
         })
         document.body.appendChild(app.view)
         const loader = PIXI.Loader.shared
+        
         mapData.usedTiles.forEach(usedTile =>{
             loader.add(`Terrain/${usedTile}`, `./res/img/tiles/${usedTile}.png`)
         })
@@ -18,11 +19,6 @@ function loader (map){
             loader.add(`Units/${usedUnit}`, `./res/img/tiles/${usedUnit}.png`)
         })
         loader.load((loader,resources) => {
-            const terrain = new Terrain({
-                tileHeight: 32,
-                tileWidth: 64,
-                mapData: mapData
-            })
             terrainRenderer(mapData, app)
         }
     })
