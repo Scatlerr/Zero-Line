@@ -4,7 +4,9 @@ function terrainRenderer(mapData, resTerrain) {
 
   mapData.map.tiles.forEach((usedTileRow, y) =>{
     usedTileRow.forEach((usedTile, x) =>{
+      logToScreen("Rendering: " + usedTile + "at" + x + "," + y)
       const sprite = new PIXI.Sprite(resTerrain[usedTile].texture);
+      if (!resTerrain[usedTile]){logToScreen("NOTHING HERE WE ARE DOOMED "+usedTile)}
       sprite.x = ((x-y-1)*64 + app.width)/2;
       sprite.y = ((x+y)*32)/2;
       terrainLayer.addChild(sprite);
