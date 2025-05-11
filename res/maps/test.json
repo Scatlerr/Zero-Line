@@ -23,18 +23,22 @@
   "resources": {
     "tiles": {
       "grass": {
+        "tileID": "grass",
         "sprite": "grass",
         "attributes": ["drillable"]
       },
       "sand": {
+        "tileID": "sand",
         "sprite": "sand",
         "attributes": ["drillable"]
       },
       "water": {
+        "tileID": "water",
         "sprite": "water",
         "attributes": ["water"]
       },
       "ocean": {
+        "tileID": "ocean",
         "sprite": "ocean",
         "attributes": ["water"]
       }
