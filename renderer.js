@@ -1,5 +1,5 @@
 function terrainRenderer(map, app) {
-  const terrainLayer = new PIXI.container()
+  const terrainLayer = new PIXI.Container()
   app.stage.appendChild(terrainLayer);
 
   map.tiles.forEach((usedTileRow, y) =>{
@@ -16,6 +16,7 @@ function terrainRenderer(map, app) {
 }
 
 function unitRenderer(unit) {
+  const groundLayer = new PIXI.Container()
   unit.sprite.x = ((unit.x-unit.y-1)*64 + app.width)/2;
   unit.sprite.y = ((unit.x+unit.y)*32)/2
   groundLayer.addChild(unit.sprite)
@@ -34,7 +35,7 @@ class Unit {
     this.moveToX = config.moveToX || null;
     this.moveToY = config.moveToY || null;
     this.isGround = config.isGround || true;
-    this.sprite = PIXI.sprite(PIXI.loader.shared[(this.isGround)?"Ground":"Air"][typeID]);
+    this.sprite = PIXI.Sprite(PIXI.loader.shared[(this.isGround)?"Ground":"Air"][typeID]);
   }
   addToRenderer (){
     unitRenderer(this)
