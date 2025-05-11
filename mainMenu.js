@@ -13,5 +13,5 @@ document.querySelector("#campBackBtn").onclick = () =>{
 
 document.querySelector("#startCampBtn").onclick = () => {
     campMenu.style.display = "none"
-    loader(test)
+    loader("test")
 }
