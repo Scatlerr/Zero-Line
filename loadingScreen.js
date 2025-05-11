@@ -11,15 +11,26 @@ function loader (map){
         app.width = mapData.map.width
         app.height = mapData.map.height
         const loader = PIXI.Loader.shared
+        const resTerrain = {}
+        const resUnits = {}
         
-        mapData.map.usedTiles.forEach(usedTile =>{
-            loader.add(`Terrain/${usedTile}`, `./res/img/tiles/${usedTile}.png`)
+        mapData.resources.tiles.forEach(tile =>{
+            loader.add("Terrain/"+tile, `./res/img/tiles/${tile.sprite}.png`)
         })
-        mapData.map.groundUnits.forEach(usedUnit =>{
-            loader.add(`Ground/${usedUnit.typeID}`, `./res/img/units/${usedUnit.Image}.png`)
+        mapData.resources.units.forEach(unit =>{
+            loader.add("Units/"unit, `./res/img/units/${unit.sprite}.png`)
         })
         loader.load((loader,resources) => {
-            terrainRenderer(mapData)
+            for (let key in resources){
+                const [objectType, ID] = key.split("/")
+                if (objectType === "Terrain"){
+                    resTerrain[ID]=resources[key]
+                } else if (objectType === "Units"){
+                    resUnits[ID] = resources[key]
+                }
+                
+            }
+            terrainRenderer(mapData, resTerrain)
         }
     })
 }
