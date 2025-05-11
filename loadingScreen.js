@@ -13,12 +13,12 @@ function loader (map){
         const resTerrain = {}
         const resUnits = {}
         
-        mapData.resources.tiles.forEach(tile =>{
+        for (let tile in mapData.map.resources.tiles){
             loader.add("Terrain/"+tile, `./res/img/tiles/${tile.sprite}.png`)
-        })
-        mapData.resources.units.forEach(unit =>{
+        }
+        for (let unit in mapData.map.resources.units){
             loader.add("Units/"unit, `./res/img/units/${unit.sprite}.png`)
-        })
+        }
         loader.load((loader,resources) => {
             for (let key in resources){
                 const [objectType, ID] = key.split("/")
