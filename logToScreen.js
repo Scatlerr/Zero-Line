@@ -20,4 +20,5 @@ function logToScreen(msg) {
   logBox.innerHTML += msg + "<br>";
 }
 
-logToScreen("it's working")
+const logToScreen = logToConsole
+const consoleToLog = logToConsole
