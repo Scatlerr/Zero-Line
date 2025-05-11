@@ -1,8 +1,8 @@
-function terrainRenderer(map, app) {
+function terrainRenderer(mapData, app) {
   const terrainLayer = new PIXI.Container()
   app.stage.appendChild(terrainLayer);
 
-  map.map.tiles.forEach((usedTileRow, y) =>{
+  mapData.map.tiles.forEach((usedTileRow, y) =>{
     usedTileRow.forEach((usedTile, x) =>{
       const isoX = ((x-y-1)*64 + app.width)/2;
       const isoY = ((x+y)*32)/2;
