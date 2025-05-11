@@ -5,7 +5,7 @@ function loader (map){
     .then(response => response.json())
     .then(data => {
         const mapData = data;
-        const app = new PIXI.Application({
+        app = new PIXI.Application({
             width: mapData.map.width,
             height: mapData.map.height
         })
@@ -19,7 +19,7 @@ function loader (map){
             loader.add(`Units/${usedUnit}`, `./res/img/tiles/${usedUnit}.png`)
         })
         loader.load((loader,resources) => {
-            terrainRenderer(mapData, app)
+            terrainRenderer(mapData)
         }
     })
 }
