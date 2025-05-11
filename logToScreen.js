@@ -1,6 +1,6 @@
 //this file was written by ai
 
-function logToScreen(msg) {
+function logToConsole(msg) {
   let logBox = document.getElementById("debugLog");
   if (!logBox) {
     logBox = document.createElement("div");
