@@ -37,7 +37,8 @@ class Unit {
     this.HP = config.HP || this.maxHP;
     this.moveToX = config.moveToX || null;
     this.moveToY = config.moveToY || null;
-    this.image = config.image;
+    this.isGround = config.isGround || yes;
+    this.sprite = PIXI.sprite(PIXI.loader.shared[(this.isGround)?"Ground":"Air"][typeID]);
   }
   addToRenderer (){
     unitRenderer(this)
