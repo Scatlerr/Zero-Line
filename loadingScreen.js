@@ -1,6 +1,6 @@
 //document.querySelector("loadingScreen").style.display="block"
 
-var app = new PIXI.Application() //app is global
+let app = new PIXI.Application()
 document.body.appendChild(app.view)
 
 function loader (map){
@@ -29,7 +29,7 @@ function loader (map){
                 }
                 
             }
-            terrainRenderer(mapData, resTerrain)
+            terrainRenderer(mapData, resTerrain, app)
         })
     })
 }
