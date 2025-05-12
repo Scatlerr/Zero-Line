@@ -16,6 +16,8 @@ function loader (map, app){
             logToScreen(tile+" added")
             loader.add("Terrain/"+mapData.resources.tiles[tile].typeID, `./res/img/tiles/${mapData.resources.tiles.tile.sprite}.png`)
         }
+        logToScreen("🐛")
+        
         for (let unit in mapData.resources.units){
             logToScreen(unit+" added")
             loader.add("Units/"+mapData.resources.units[unit].typeID, `./res/img/units/${mapData.resources.units.unit.sprite}.png`)
@@ -35,5 +37,6 @@ function loader (map, app){
             initRenderer(app)
             terrainRenderer(mapData, resTerrain, app)
         })
+        logToScreen("🥲")
     })
 }
