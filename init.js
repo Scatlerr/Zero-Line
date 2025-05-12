@@ -41,12 +41,15 @@ function loadingScreen (map){
     })
 }
 
-function loadet (data, type, app) {
+function loader (data, type, app) {
     const loader = PIXI.loader.shared
     for (let key in data){
         logToScreen(JSON.stringify(key);
         loader.add(type + key[typeID])
     }
+    
+    resTerrain = {}
+    resUnits = {}
     
     loader.load(loader, resources) => {
         for (let key in resources){
