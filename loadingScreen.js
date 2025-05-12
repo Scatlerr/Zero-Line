@@ -1,6 +1,7 @@
 //document.querySelector("loadingScreen").style.display="block"
 
-var app = new PIXI.Application()
+var app = undefined
+app = new PIXI.Application()
 document.body.appendChild(app.view)
 
 function loader (map){
