@@ -8,10 +8,11 @@ function loader (map, app){
         logToScreen(JSON.stringify(data))
         const mapData = data;
         app.renderer.resize((mapData.map.width+mapData.map.height)*32,(mapData.map.height+mapData.map.width)*16)
+        logToScreen("app.renderer.resize")
         const loader = PIXI.Loader.shared
         const resTerrain = {}
         const resUnits = {}
-        
+        logToScreen(JSON.stringify(mapData.resources.tiles))
         for (let tile in mapData.resources.tiles){
             logToScreen(tile+" added")
             loader.add("Terrain/"+mapData.resources.tiles[tile].typeID, `./res/img/tiles/${mapData.resources.tiles.tile.sprite}.png`)
