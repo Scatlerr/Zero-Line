@@ -30,6 +30,6 @@ function loader (map){
                 
             }
             terrainRenderer(mapData, resTerrain)
-        }
+        })
     })
 }
