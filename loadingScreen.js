@@ -1,6 +1,6 @@
 //document.querySelector("loadingScreen").style.display="block"
 
-function loader (map){
+function loader (map, app){
     fetch(`./res/maps/${map}.json`)
     .then(response => response.json())
     .then(data => {
