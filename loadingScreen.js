@@ -27,6 +27,7 @@ function loader (map, app){
                 
             }
             terrainRenderer(mapData, resTerrain, app)
+            initRenderer()
         })
     })
 }
