@@ -19,6 +19,6 @@ document.querySelector("#backCampBtn").onclick = () =>{
 const app = new PIXI.Application()
 document.querySelector("#startCampBtn").onclick = () => {
     campMenu.style.display = "none"
-    logToScreen("started"
+    logToScreen("started")
     loader("test", app)
 }
