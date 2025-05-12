@@ -1,6 +1,6 @@
-logToScreen("WE ARE NOT DOOMED(MAYBE)")
-
-function terrainRenderer(mapData, resTerrain) {
+function terrainRenderer(mapData, resTerrain, app) {
+  logToScreen(mapData)
+  logToScreen(resTerrain)
   logToScreen(JSON.stringify(mapData))
   const terrainLayer = new PIXI.Container()
   app.stage.appendChild(terrainLayer);
@@ -20,7 +20,7 @@ function terrainRenderer(mapData, resTerrain) {
 
 const unitLayer = new PIXI.Container()
 app.stage.appendChild(unitLayer)
-function unitRenderer(unit) {
+function unitRenderer(unit, app) {
   unit.sprite.x = ((unit.x-unit.y-1)*64 + app.width)/2;
   unit.sprite.y = ((unit.x+unit.y)*32)/2
   unitLayer.addChild(unit.sprite)
