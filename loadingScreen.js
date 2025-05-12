@@ -14,14 +14,14 @@ function loader (map, app){
         const resUnits = {}
         logToScreen(JSON.stringify(mapData.resources.tiles))
         for (let tile in mapData.resources.tiles){
-            logToScreen(tile+" added")
-            loader.add("Terrain/"+mapData.resources.tiles[tile].typeID, `./res/img/tiles/${mapData.resources.tiles.tile.sprite}.png`)
+            logToScreen(JSON.stringify(tile)+" added")
+            loader.add("Terrain/"+mapData.resources.tiles[tile].typeID, `./res/img/tiles/${mapData.resources.tiles[tile].sprite}.png`)
         }
         logToScreen("🐛")
         
         for (let unit in mapData.resources.units){
-            logToScreen(unit+" added")
-            loader.add("Units/"+mapData.resources.units[unit].typeID, `./res/img/units/${mapData.resources.units.unit.sprite}.png`)
+            logToScreen(JSON.stringify(unit)+" added")
+            loader.add("Units/"+mapData.resources.units[unit].typeID, `./res/img/units/${mapData.resources.units[unit].sprite}.png`)
         }
         loader.load((loader,resources) => {
             for (let key in resources){
