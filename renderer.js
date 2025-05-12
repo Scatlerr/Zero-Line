@@ -20,7 +20,9 @@ function terrainRenderer(mapData, resTerrain, app) {
 
 const unitLayer = new PIXI.Container()
 function initRenderer(){
-  app.stage.appendChild(unitLayer)
+  if (!!app.stage) {
+    app.stage.appendChild(unitLayer)
+  }
 }
 function unitRenderer(unit, app) {
   unit.sprite.x = ((unit.x-unit.y-1)*64 + app.width)/2;
