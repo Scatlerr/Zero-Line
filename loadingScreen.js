@@ -13,9 +13,11 @@ function loader (map, app){
         const resUnits = {}
         
         for (let tile in mapData.resources.tiles){
+            logToScreen(tile+" added")
             loader.add("Terrain/"+mapData.resources.tiles[tile].typeID, `./res/img/tiles/${mapData.resources.tiles.tile.sprite}.png`)
         }
         for (let unit in mapData.resources.units){
+            logToScreen(unit+" added")
             loader.add("Units/"+mapData.resources.units[unit].typeID, `./res/img/units/${mapData.resources.units.unit.sprite}.png`)
         }
         loader.load((loader,resources) => {
@@ -28,8 +30,10 @@ function loader (map, app){
                 }
                 
             }
+            logToScreen(resTerrain)
+            logToScreen(JSON.stringify(resTerrain))
+            initRenderer(app)
             terrainRenderer(mapData, resTerrain, app)
-            initRenderer()
         })
     })
 }
