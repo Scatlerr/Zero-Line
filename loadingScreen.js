@@ -14,10 +14,10 @@ function loader (map){
         const resUnits = {}
         
         for (let tile in mapData.resources.tiles){
-            loader.add("Terrain/"+tile.typeID, `./res/img/tiles/${tile.sprite}.png`)
+            loader.add("Terrain/"+mapData.resources.tiles.tile.typeID, `./res/img/tiles/${mapData.resources.tiles.tile.sprite}.png`)
         }
         for (let unit in mapData.resources.units){
-            loader.add("Units/"+unit.typeID, `./res/img/units/${unit.sprite}.png`)
+            loader.add("Units/"+mapData.resources.units.unit.typeID, `./res/img/units/${mapData.resources.units.unit.sprite}.png`)
         }
         loader.load((loader,resources) => {
             for (let key in resources){
