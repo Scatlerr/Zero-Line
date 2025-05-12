@@ -1,8 +1,10 @@
 //document.querySelector("loadingScreen").style.display="block"
 
-var app = undefined
-app = new PIXI.Application()
-document.body.appendChild(app.view)
+var app;
+function initApp (){
+    app = new PIXI.Application()
+    document.body.appendChild(app.view)
+}
 
 function loader (map){
     fetch(`./res/maps/${map}.json`)
