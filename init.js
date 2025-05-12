@@ -1,5 +1,5 @@
 logToScreen("it begins")
-
+initApp()
 logToScreen(`Canvas size: ${app.renderer.width} x ${app.renderer.height}`);
 
 document.addEventListener('gesturestart', e => e.preventDefault());
