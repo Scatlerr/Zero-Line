@@ -32,7 +32,7 @@ function loadingScreen (map){
         const resources = mapData.resources;
         
         const app = new PIXI.Application({
-            height: (height+width)*16
+            height: (height+width)*16,
             width: (height+width)*32
         });
         loader (resources.tiles, "Terrain/", app)
