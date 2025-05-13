@@ -53,7 +53,7 @@ function loader (resource, type, app, data) {
         for (let key in resources){
             const [objectType, ID] = key.split("/");
             if (objectType === "Terrain"){
-                resTerrain[ID]=resources[key](
+                resTerrain[ID]=resources[key];
             } else if (objectType === "Units"){
                 resUnits[ID] = resources[key];
             }
