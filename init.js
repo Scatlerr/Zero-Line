@@ -44,7 +44,7 @@ function loadingScreen (map){
 function loader (data, type, app) {
     const loader = PIXI.loader.shared
     for (let key in data){
-        logToScreen(JSON.stringify(key);
+        logToScreen(JSON.stringify(key));
         loader.add(type + key[typeID])
     }
     
