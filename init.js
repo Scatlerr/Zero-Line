@@ -22,8 +22,8 @@ document.querySelector("#startCampBtn").onclick = () => {
 
 function loadingScreen (map){
     
-    fetch(`./res/maps/${map}.json`);
-    .then(response => response.json());
+    fetch(`./res/maps/${map}.json`)
+    .then(response => response.json())
     .then(data => {
         const height = data.map.height;
         const width = mapData.map.width;
