@@ -51,7 +51,7 @@ function loader (data, type, app) {
     resTerrain = {}
     resUnits = {}
     
-    loader.load(loader, resources) => {
+    loader.load((loader, resources) => {
         for (let key in resources){
             const [objectType, ID] = key.split("/")
             if (objectType === "Terrain"){
@@ -61,5 +61,5 @@ function loader (data, type, app) {
             }
         }
         terrainRenderer(data, app)
-    }
+    })
 }
