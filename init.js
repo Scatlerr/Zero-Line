@@ -60,6 +60,6 @@ function loader (data, type, app) {
                 resUnits[ID] = resources[key]
             }
         }
-        terrainRenderer(data, app)
+        terrainRenderer(data, resTerrain, app)
     })
 }
