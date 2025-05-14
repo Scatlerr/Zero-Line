@@ -33,6 +33,7 @@ function loadingScreen (map){
             height: (height+width)*16,
             width: (height+width)*32
         });
+        document.body.appendChild(app.view)
         loader(resources, app, data);
         
         
@@ -40,25 +41,22 @@ function loadingScreen (map){
 }
 
 function loader (resource, app, data) {
-    const loader = PIXI.Loader.shared;
+    const resTerrain = new PIXI.Loader;
     for (let key in resource.tiles){
-        logToScreen(JSON.stringify(key));
-        loader.add("Terrain/" + key);
-    }
+        resTerrain.add(key, "res/img/tiles/"+resource.tiles[key].sprite+".png");
+    };
     
-    resTerrain = {};
-    resUnits = {};
-    
-    loader.load((loader, resources) => {
-        for (let key in resources){
-            const [objectType, ID] = key.split("/");
-            if (objectType === "Terrain"){
-                resTerrain[ID]=resources[key];
-            } else if (objectType === "Units"){
-                resUnits[ID] = resources[key];
-            }
-        }
+    resTerrain.load((loader, resources) => {
         terrainRenderer(data, resTerrain, app);
+    });
+    
+    const resUnits = new PIXI.Loader;
+    for (let key in resource.units){
+        resUnits.add(key, "res/img/units/"+resource.units[key].sprite+".png");
+    };
+    
+    resUnits.load((loader, resources) => {
+        unitRenderer(data, resUnits, app)
     })
 }
 
@@ -69,11 +67,15 @@ function terrainRenderer (data, resTerrain, app){
     const tiles = data.map.tiles;
     tiles.forEach((usedTileRow, y) => {
         usedTileRow.forEach((usedTile, x) => {
-            const sprite = new PIXI.Sprite(resTerrain[usedTile].terrain);
+            const sprite = new PIXI.Sprite(resTerrain[usedTile].texture);
             sprite.x = (x-y)*32 + app.width/2;
             sprite.y = (x+y)*16;
             terrainLayer.addChild(sprite);
         })
     })
     terrainLayer.cacheAsBitmap = true;
+}
+
+function unitRenderer (map, resUnits, app){
+    
 }
