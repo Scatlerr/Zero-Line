@@ -26,24 +26,24 @@ function loadingScreen (map){
     .then(response => response.json())
     .then(data => {
         const height = data.map.height;
-        const width = mapData.map.width;
-        const resources = mapData.resources;
+        const width = data.map.width;
+        const resources = data.resources;
         
         const app = new PIXI.Application({
             height: (height+width)*16,
             width: (height+width)*32
         });
-        loader(resources.tiles, "Terrain/", app, data);
+        loader(resources, app, data);
         
         
     })
 }
 
-function loader (resource, type, app, data) {
-    const loader = PIXI.loader.shared;
-    for (let key in resource){
+function loader (resource, app, data) {
+    const loader = PIXI.Loader.shared;
+    for (let key in resource.tiles){
         logToScreen(JSON.stringify(key));
-        loader.add(type + key[typeID]);
+        loader.add("Terrain/" + key);
     }
     
     resTerrain = {};
@@ -64,7 +64,7 @@ function loader (resource, type, app, data) {
 
 function terrainRenderer (data, resTerrain, app){
     const terrainLayer = new PIXI.Container();
-    app.stage.appendChild(terrainLayer);
+    app.stage.addChild(terrainLayer);
     
     const tiles = data.map.tiles;
     tiles.forEach((usedTileRow, y) => {
