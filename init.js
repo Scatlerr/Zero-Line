@@ -21,10 +21,11 @@ document.querySelector("#startCampBtn").onclick = () => {
 }
 
 function loadingScreen (map){
-    
+    logToScreen("fetching map")
     fetch(`./res/maps/${map}.json`)
     .then(response => response.json())
     .then(data => {
+        logToScreen(JSON.stringify(data))
         const height = data.map.height;
         const width = data.map.width;
         const resources = data.resources;
@@ -34,6 +35,7 @@ function loadingScreen (map){
             width: (height+width)*32
         });
         document.body.appendChild(app.view)
+        logToScreen("appended app")
         loader(resources, app, data);
         
         
@@ -41,6 +43,7 @@ function loadingScreen (map){
 }
 
 function loader (resource, app, data) {
+    logToScreen("Loader started")
     const resTerrain = new PIXI.Loader;
     for (let key in resource.tiles){
         resTerrain.add(key, "res/img/tiles/"+resource.tiles[key].sprite+".png");
@@ -61,6 +64,7 @@ function loader (resource, app, data) {
 }
 
 function terrainRenderer (data, resTerrain, app){
+    logToScreen("renderer active")
     const terrainLayer = new PIXI.Container();
     app.stage.addChild(terrainLayer);
     
@@ -70,6 +74,7 @@ function terrainRenderer (data, resTerrain, app){
             const sprite = new PIXI.Sprite(resTerrain[usedTile].texture);
             sprite.x = (x-y)*32 + app.width/2;
             sprite.y = (x+y)*16;
+            logToScreen("tile placed: "+ x +","+y)
             terrainLayer.addChild(sprite);
         })
     })
