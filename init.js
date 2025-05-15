@@ -27,10 +27,11 @@ function loadingScreen (map){
     .then(data => {
         logToScreen(JSON.stringify(data))
         const height = data.map.height;
-        logToScreen("🟨")
+        logToScreen(height)
         const width = data.map.width;
         const resources = data.resources;
-        logToScreen("🐛")
+        logToScreen(width)
+        logToScreen((height+width)/16)
         const app = new PIXI.Application({
             height: (height+width)*16,
             width: (height+width)*32
