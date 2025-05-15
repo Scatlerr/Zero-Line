@@ -72,7 +72,7 @@ function terrainRenderer (data, resTerrain, app){
     tiles.forEach((usedTileRow, y) => {
         usedTileRow.forEach((usedTile, x) => {
             const sprite = new PIXI.Sprite(resTerrain[usedTile].texture);
-            sprite.x = (x-y)*32 + app.width/2;
+            sprite.x = (x-y)*32 + app.screen.width/2;
             sprite.y = (x+y)*16;
             logToScreen("tile placed: "+ x +","+y)
             terrainLayer.addChild(sprite);
