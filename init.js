@@ -20,7 +20,7 @@ document.querySelector("#startCampBtn").onclick = () => {
     loadingScreen("test");
 }
 
-function loadingScreen (map){
+await function loadingScreen (map){
     logToScreen("fetching map")
     fetch(`./res/maps/${map}.json`)
     .then(response => response.json())
@@ -43,7 +43,7 @@ function loadingScreen (map){
     })
 }
 
-function loader (resource, app, data) {
+await function loader (resource, app, data) {
     for (let key in resources.tiles){
         const asset = resources[key].sprite + ".png"
         await PIXI.Assets.load(asset)
