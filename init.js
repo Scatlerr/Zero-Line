@@ -32,12 +32,10 @@ function loadingScreen (map){
         const resources = data.resources;
         logToScreen(width)
         logToScreen((height+width)*16)
-        const app = new PIXI.Application({
-            height: (height+width)*16,
-            width: (height+width)*32
-        });
+        const app = new PIXI.Application()
+        await app.init({ width: (width+height)*32, height: (width+height)*16 });
         logToScreen(app)
-        document.body.appendChild(app.view)
+        document.body.appendChild(app.canvas)
         logToScreen("appended app")
         loader(resources, app, data);
         
@@ -46,24 +44,12 @@ function loadingScreen (map){
 }
 
 function loader (resource, app, data) {
-    logToScreen("Loader started")
-    const resTerrain = new PIXI.Loader;
-    for (let key in resource.tiles){
-        resTerrain.add(key, "res/img/tiles/"+resource.tiles[key].sprite+".png");
-    };
-    
-    resTerrain.load((loader, resources) => {
-        terrainRenderer(data, resTerrain, app);
-    });
-    
-    const resUnits = new PIXI.Loader;
-    for (let key in resource.units){
-        resUnits.add(key, "res/img/units/"+resource.units[key].sprite+".png");
-    };
-    
-    resUnits.load((loader, resources) => {
-        unitRenderer(data, resUnits, app)
-    })
+    for (let key in resources.tiles){
+        const asset = resources[key].sprite + ".png"
+        await PIXI.Assets.load(asset)
+        const sprite = new PIXI.Sprite.from(asset)
+        app.stage.addChild(sprite)
+    }
 }
 
 function terrainRenderer (data, resTerrain, app){
