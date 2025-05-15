@@ -31,12 +31,12 @@ function loadingScreen (map){
         const width = data.map.width;
         const resources = data.resources;
         logToScreen(width)
-        logToScreen((height+width)/16)
+        logToScreen((height+width)*16)
         const app = new PIXI.Application({
             height: (height+width)*16,
             width: (height+width)*32
         });
-        logToScreen("😀")
+        logToScreen(app)
         document.body.appendChild(app.view)
         logToScreen("appended app")
         loader(resources, app, data);
