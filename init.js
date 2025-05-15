@@ -32,8 +32,10 @@ async function loadingScreen (map){
         const resources = data.resources;
         logToScreen(width)
         logToScreen((height+width)*16)
-        const app = new PIXI.Application()
-        await app.init({ width: (width+height)*32, height: (width+height)*16 });
+        const app = new PIXI.Application({
+            width: (width+height)*32, 
+            height: (width+height)*16
+        })
         logToScreen(app)
         document.body.appendChild(app.canvas)
         logToScreen("appended app")
